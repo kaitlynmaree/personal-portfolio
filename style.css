@@ -14,6 +14,7 @@
     background: linear-gradient(135deg, #290D5B, #19052e);
     color: #FFF;
     overflow-x: hidden;
+    cursor: none;
   }
   
   /* Navigation Bar */
@@ -50,6 +51,7 @@
     padding: 100px 20px;
     min-height: 100vh;
     position: relative;
+    z-index: 10;
   }
   
   /* Home Section */
@@ -179,33 +181,16 @@
   }
   
   /* Custom Cursor (Replace with your own star image if desired) */
-  
-  /* Shooting Star Effect */
-  .shooting-star {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background: #FFB6C1;
-    border-radius: 50%;
-    pointer-events: none;
-    animation: shoot 1s ease-out forwards;
-  }
-
-
-.star {
-    position: absolute;
-    width: 30px; /* Adjust size as needed */
+  .star {
+    position: fixed;
+    width: 30px;
     height: 30px;
-    pointer-events: none; /* Prevent interference */
+    pointer-events: none;
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
     transform: scale(1);
+    z-index: 9999;
     animation: twinkle 0.5s ease-out;
-}
-  @keyframes shoot {
-    0% { transform: translate(0, 0); opacity: 1; }
-    100% { transform: translate(50px, -50px); opacity: 0; }
   }
-
   @keyframes twinkle {
     0% {
         transform: scale(1.2);
@@ -216,10 +201,17 @@
         opacity: 0;
     }
 }
-
-  /* Make sure all sections allow mouse interactions */
-section {
-    position: relative;
-    z-index: 10;
+  /* Shooting Star Effect */
+  .shooting-star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #FFB6C1;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: shoot 1s ease-out forwards;
 }
-
+  @keyframes shoot {
+    0% { transform: translate(0, 0); opacity: 1; }
+    100% { transform: translate(50px, -50px); opacity: 0; }
+  }
