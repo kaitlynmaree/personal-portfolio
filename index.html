@@ -66,19 +66,46 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact-container">
-      <p>Feel free to reach out via email or check out my profiles:</p>
-      <ul>
-        <li> <a href="mailto:kaitlynashcroft01@gmail.com"> Email</a></li>
-        <li> </li> <a href="https://www.linkedin.com/in/kaitlyn-ashcroft/" target="_blank">LinkedIn</a></li>
-        <li> <a href="https://github.com/kaitlynmaree" target="_blank">GitHub</a></li>
-      </ul>
-    </div>
-  </section>
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact</h2>
   
+  <div class="contact-container">
+    <p>Check out my profiles:</p>
+    <ul class="social-links">
+      <li><a href="https://www.linkedin.com/in/kaitlyn-ashcroft/" target="_blank">LinkedIn</a></li>
+      <li><a href="https://github.com/kaitlynmaree" target="_blank">GitHub</a></li>
+    </ul>
+  </div>
+
+  <!-- Space between links and form -->
+  <div class="spacer"></div>
+
+  <div class="contact-container">
+    <h3>Or reach out!</h3>
+
+    <!-- Contact Form -->
+    <form id="contact-form" action="https://contact-form-backend-2had.onrender.com" method="POST">
+      
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <!-- Honeypot Field (Hidden to Bots) -->
+      <input type="text" name="honeypot" class="honeypot">
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <p id="form-status"></p>
+  </div>
+</section>
+
   <!-- Link to external JavaScript -->
   <script src="script.js"></script>
 </body>

@@ -44,5 +44,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 300);
     }
 });
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent page reload
 
+    let formData = new FormData(this);
+
+    fetch(this.action, {
+      method: "POST",
+      body: formData,
+      headers: { "Accept": "application/json" }
+    })
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("form-status").textContent = data.success || data.error;
+    })
+    .catch(error => console.error("Error:", error));
+  });
   
