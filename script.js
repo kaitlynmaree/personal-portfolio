@@ -56,8 +56,16 @@ document.getElementById("contact-form").addEventListener("submit", function(even
     })
     .then(response => response.json())
     .then(data => {
-      document.getElementById("form-status").textContent = data.success || data.error;
+        console.log("Server Response:", data); // Log response for debugging
+        document.getElementById("form-status").textContent = data.success || data.error;
+
+        if (data.success) {
+            document.getElementById("contact-form").reset(); // Clear form on success
+        }
     })
-    .catch(error => console.error("Error:", error));
-  });
+    .catch(error => {
+        console.error("Error:", error);
+        document.getElementById("form-status").textContent = "An error occurred. Please try again.";
+    });
+});
   
