@@ -68,4 +68,6 @@ document.getElementById("contact-form").addEventListener("submit", function(even
         document.getElementById("form-status").textContent = "An error occurred. Please try again.";
     });
 });
+
+
   

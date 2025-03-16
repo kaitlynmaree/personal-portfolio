@@ -14,8 +14,8 @@
   <nav>
     <ul>
       <li><a href="#home">Home</a></li>
-      <li><a href="#projects">Projects</a></li>
       <li><a href="#about">About Me</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -32,27 +32,6 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-container">
-      <!-- Example project card -->
-      <div class="project-card">
-        <img src="project1.png" alt="Project 1" />
-        <h3>Coursework Project 1</h3>
-        <p>description of the project</p>
-        <a href="#">Learn More</a>
-      </div>
-      <div class="project-card">
-        <img src="project2.png" alt="Project 2" />
-        <h3>Hobby Project 1</h3>
-        <p>description of the project </p>
-        <a href="#">Learn More</a>
-      </div>
-      <!-- Add additional project cards as needed -->
-    </div>
-  </section>
-
   <!-- About Me Section -->
   <section id="about">
     <h2>About Me</h2>
@@ -63,6 +42,67 @@
       <p>
         An Aerospace Systems Engineering student with a passion for space and robotics!
       </p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-container">
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="images/home_assistant.png" alt="Home Assistant Setup">
+        </div>
+        <div class="project-details">
+          <h3>Personal Home Assistant</h3>
+          <p>
+            Designed and implemented a fully cusotmisable smart home automation system using Home Assistant OS, integrating
+            various IoT devices and creating custom automations for real-world problem solving.
+          </p>
+          <a class="project-link" href="https://github.com/kaitlynmaree/my-ha-setup" target="_blank">View on GitHub</a>
+          <p class="tech-stack">Home Assistant, MQTT, yaml</p>
+        </div>   
+
+        </div>  
+        <div class="project-card">
+          <div class="project-image">
+          <img src="images/robot_cad.png" alt="balancing robot">
+          </div>
+          <div class="project-details">
+          <h3>Self-Balancing Robot with Embedded Control</h3>
+          <p>Design, simulation and implementation of a two-wheel balancing robot. 
+            Implemented control on an STM32, used PWM motor control and gathered real-time sensor data.
+            Designed and assembled custom PCB. 
+          </p>
+          <p class="tech-stack">C, MATLAB</p>
+          <a class="project-link" href="robot.html" target="_blank">Learn More</a>
+        </div></div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/qanser.jpg" alt="Home Assistant Setup">
+          </div>
+          <div class="project-details">
+            <h3>Qanser Aero Device</h3>
+            <p>
+              Simulated and implemented embedded control algorithms for the Quanser Aero device, 
+              an educational aerospace system. Explored linear and nonlinear control techniques, 
+              and validated responses using MATLAB/Simulink.
+            </p>
+            <p class="tech-stack">STM32, MATLAB, Simulink</p>
+          </div>   </div>
+
+          <div class="project-card">
+            <div class="project-image">
+            <img src="project2.png" alt="Project 2" /></div>
+            <div class="project-details">
+            <h3>Monocular Depth Estimation for UAV Obstacle Avoidance</h3>
+            <p>In Progress... </p>
+            <p class="tech-stack">Python</p>
+          </div>
+          </div>
+      <!-- Add additional project cards as needed -->
     </div>
   </section>
 
