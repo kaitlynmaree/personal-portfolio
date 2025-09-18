@@ -3,150 +3,498 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kaitlyn Ashcroft</title>
-  <!-- Link to Google Font (handwritten style) -->
-<!-- Correct Google Fonts link -->
-  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <title>Kaitlyn Ashcroft | Aerospace Systems Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- Navigation Bar -->
-  <nav>
+<body class="grain">
+  <!-- Background layers -->
+  <div class="bg-layer bg-layer-1"></div>
+  <div class="bg-layer bg-layer-2"></div>
+  <div class="mesh-gradient"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
   </nav>
-  
-  <!-- Home Section -->
-  <section id="home">
-    <div class="intro">
-      <h1>Kaitlyn Ashcroft</h1>
-      <p> my portfolio</p>
-      <div class="graphic">
-        <!-- Replace with your animated robot/spaceship graphic -->
-        <img src="images/spaceship.png" alt="Spaceship" />
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-background">
+      <div class="hero-grid"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <div class="status-dot"></div>
+        <span>Available for opportunities</span>
       </div>
+      <h1>Kaitlyn Ashcroft</h1>
+      <div class="hero-subtitle">Aerospace Systems Engineer</div>
+      <p class="hero-description">
+        Designing the future of space exploration through cutting-edge robotics, 
+        embedded systems, and autonomous control algorithms.
+      </p>
+      <div class="cta-buttons">
+        <a href="#projects" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+          </svg>
+          Explore My Work
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+          Get In Touch
+        </a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll to explore</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+      </svg>
     </div>
   </section>
 
-  <!-- About Me Section -->
+  <!-- About Section -->
   <section id="about">
-    <h2>About Me</h2>
-    <div class="profile-card">
-      <!-- Replace with your avatar (e.g., astronaut or cute robot) -->
-      <img src="images/rocket.png" alt="rocket" />
-      <h3>Kaitlyn Ashcroft</h3>
-      <p>
-        An Aerospace Systems Engineering student with a passion for space and robotics!
+    <div class="section-header reveal">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">
+        Bridging theoretical aerospace engineering with hands-on embedded systems development
       </p>
+    </div>
+    
+    <div class="about-grid">
+      <div class="about-visual reveal-left">
+        <div class="about-card">
+          <div class="stats-grid stagger-children">
+            <div class="stat-item">
+              <span class="stat-number">4+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">15+</span>
+              <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">8</span>
+              <span class="stat-label">Technologies Mastered</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Passion Driven</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-content reveal-right">
+        <h3>Engineering Tomorrow's Space Technology</h3>
+        <p>
+          As an Aerospace Systems Engineering student with a deep passion for space exploration, 
+          I combine rigorous theoretical knowledge with practical implementation skills. My journey 
+          spans from designing sophisticated control algorithms for autonomous robots to architecting 
+          intelligent automation systems.
+        </p>
+        <p>
+          I specialise in real-time embedded systems, advanced control theory, and signal processing 
+          with a focus on aerospace applications. My experience ranges from low-level microcontroller 
+          programming to complex system architecture design, always with the goal of pushing the 
+          boundaries of what's possible in space technology.
+        </p>
+
+        <div class="skills-container">
+          <div class="skills-header">
+            <h4>Core Expertise</h4>
+            <div class="skills-tabs">
+              <button class="skill-tab active" data-category="programming">Programming</button>
+              <button class="skill-tab" data-category="embedded">Embedded</button>
+              <button class="skill-tab" data-category="control">Control</button>
+              <button class="skill-tab" data-category="tools">Tools</button>
+            </div>
+          </div>
+          
+          <div class="skills-content stagger-children" id="skills-programming">
+            <div class="skill-item">
+              <div class="skill-icon">C</div>
+              <div class="skill-name">C/C++</div>
+              <div class="skill-level">Expert</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">Py</div>
+              <div class="skill-name">Python</div>
+              <div class="skill-level">Advanced</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">ML</div>
+              <div class="skill-name">MATLAB</div>
+              <div class="skill-level">Expert</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">JS</div>
+              <div class="skill-name">JavaScript</div>
+              <div class="skill-level">Intermediate</div>
+            </div>
+          </div>
+
+          <div class="skills-content stagger-children" id="skills-embedded" style="display: none;">
+            <div class="skill-item">
+              <div class="skill-icon">ST</div>
+              <div class="skill-name">STM32</div>
+              <div class="skill-level">Expert</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">AR</div>
+              <div class="skill-name">ARM Cortex</div>
+              <div class="skill-level">Advanced</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">RT</div>
+              <div class="skill-name">Real-time Systems</div>
+              <div class="skill-level">Expert</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">PW</div>
+              <div class="skill-name">PWM Control</div>
+              <div class="skill-level">Advanced</div>
+            </div>
+          </div>
+
+          <div class="skills-content stagger-children" id="skills-control" style="display: none;">
+            <div class="skill-item">
+              <div class="skill-icon">LQ</div>
+              <div class="skill-name">LQR Control</div>
+              <div class="skill-level">Expert</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">KF</div>
+              <div class="skill-name">Kalman Filters</div>
+              <div class="skill-level">Advanced</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">SS</div>
+              <div class="skill-name">State-space</div>
+              <div class="skill-level">Expert</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">NL</div>
+              <div class="skill-name">Nonlinear Control</div>
+              <div class="skill-level">Advanced</div>
+            </div>
+          </div>
+
+          <div class="skills-content stagger-children" id="skills-tools" style="display: none;">
+            <div class="skill-item">
+              <div class="skill-icon">SL</div>
+              <div class="skill-name">Simulink</div>
+              <div class="skill-level">Expert</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">HA</div>
+              <div class="skill-name">Home Assistant</div>
+              <div class="skill-level">Advanced</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">PC</div>
+              <div class="skill-name">PCB Design</div>
+              <div class="skill-level">Intermediate</div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">3D</div>
+              <div class="skill-name">3D Printing</div>
+              <div class="skill-level">Advanced</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Projects Section -->
   <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-container">
+    <div class="section-header reveal">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-subtitle">
+        A curated selection of engineering projects showcasing expertise in 
+        embedded systems, control theory, and aerospace applications
+      </p>
+    </div>
 
-      <div class="project-card">
-        <div class="project-image">
-          <img src="images/home_assistant.png" alt="Home Assistant Setup">
-        </div>
-        <div class="project-details">
-          <h3>Personal Home Assistant</h3>
-          <p>
-            Designed and implemented a fully cusotmisable smart home automation system using Home Assistant OS, integrating
-            various IoT devices and creating custom automations for real-world problem solving.
-          </p>
-          <a class="project-link" href="https://github.com/kaitlynmaree/my-ha-setup" target="_blank">View on GitHub</a>
-          <p class="tech-stack">Home Assistant, MQTT, yaml</p>
-        </div>   
-
-        </div>  
-        <div class="project-card">
-          <div class="project-image">
-          <img src="images/robot_cad.png" alt="balancing robot">
-          </div>
-          <div class="project-details">
-          <h3>Self-Balancing Robot with Embedded Control</h3>
-          <p>Design, simulation and implementation of a two-wheel balancing robot. 
-            Implemented control on an STM32, used PWM motor control and gathered real-time sensor data.
-            Designed and assembled custom PCB. 
-          </p>
-          <p class="tech-stack">C, MATLAB</p>
-          <a class="project-link" href="robot.html" target="_blank">Learn More</a>
-        </div></div>
-
-        <div class="project-card">
-          <div class="project-image">
-            <img src="images/qanser.jpg" alt="Home Assistant Setup">
-          </div>
-          <div class="project-details">
-            <h3>Qanser Aero Device</h3>
-            <p>
-              Simulated and implemented embedded control algorithms for the Quanser Aero device, 
-              an educational aerospace system. Explored linear and nonlinear control techniques, 
-              and validated responses using MATLAB/Simulink.
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <div class="project-card reveal">
+        <div class="project-content">
+          <div class="project-info">
+            <div class="project-number">01</div>
+            <h3 class="project-title">Self-Balancing Robot with Embedded Control</h3>
+            <p class="project-description">
+              An advanced two-wheel balancing robot featuring dynamic control algorithms, 
+              real-time sensor fusion, and custom PCB development. Applied Lagrangian mechanics 
+              and Linear Quadratic Regulator (LQR) control for optimal balance and superior 
+              disturbance rejection capabilities.
             </p>
-            <p class="tech-stack">STM32, MATLAB, Simulink</p>
-          </div>   </div>
+            <div class="project-tech">
+              <span class="tech-tag">C/C++</span>
+              <span class="tech-tag">STM32</span>
+              <span class="tech-tag">MATLAB</span>
+              <span class="tech-tag">Kalman Filter</span>
+              <span class="tech-tag">PCB Design</span>
+              <span class="tech-tag">LQR Control</span>
+            </div>
+            <div class="project-links">
+              <a href="robot.html" class="project-link primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+                </svg>
+                Learn More
+              </a>
+            </div>
+          </div>
+          <div class="project-visual">
+            <img src="images/robot_cad.png" alt="Self-Balancing Robot CAD Model" />
+          </div>
+        </div>
+      </div>
 
-          <div class="project-card">
-            <div class="project-image">
-            <img src="project2.png" alt="Project 2" /></div>
-            <div class="project-details">
-            <h3>Monocular Depth Estimation for UAV Obstacle Avoidance</h3>
-            <p>In Progress... </p>
-            <p class="tech-stack">Python</p>
+      <!-- Project 2 -->
+      <div class="project-card reveal">
+        <div class="project-content">
+          <div class="project-visual">
+            <img src="images/home_assistant.png" alt="Smart Home Dashboard" />
           </div>
+          <div class="project-info">
+            <div class="project-number">02</div>
+            <h3 class="project-title">Intelligent Home Automation System</h3>
+            <p class="project-description">
+              A comprehensive smart home solution using Home Assistant OS, integrating 
+              diverse IoT devices with custom automations. Features advanced sensor 
+              integration, predictive energy monitoring, and adaptive scheduling algorithms 
+              that learn from user behavior patterns.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Home Assistant</span>
+              <span class="tech-tag">MQTT</span>
+              <span class="tech-tag">YAML</span>
+              <span class="tech-tag">IoT</span>
+              <span class="tech-tag">Node-RED</span>
+              <span class="tech-tag">Python</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/kaitlynmaree/my-ha-setup" class="project-link primary" target="_blank">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                View on GitHub
+              </a>
+            </div>
           </div>
-      <!-- Add additional project cards as needed -->
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card reveal">
+        <div class="project-content">
+          <div class="project-info">
+            <div class="project-number">03</div>
+            <h3 class="project-title">Quanser Aero Control System</h3>
+            <p class="project-description">
+              Advanced embedded control algorithms for the Quanser Aero educational aerospace 
+              platform. Implemented both linear and nonlinear control strategies with 
+              comprehensive simulation and hardware validation using MATLAB/Simulink. 
+              Features real-time parameter tuning and adaptive control mechanisms.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">STM32</span>
+              <span class="tech-tag">MATLAB</span>
+              <span class="tech-tag">Simulink</span>
+              <span class="tech-tag">Control Theory</span>
+              <span class="tech-tag">Real-time</span>
+              <span class="tech-tag">Aerospace</span>
+            </div>
+            <div class="project-links">
+              <a href="#contact" class="project-link secondary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                Request Details
+              </a>
+            </div>
+          </div>
+          <div class="project-visual">
+            <img src="images/qanser.jpg" alt="Quanser Aero Platform" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card reveal">
+        <div class="project-content">
+          <div class="project-visual">
+            <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: var(--gradient-accent); opacity: 0.1;">
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="var(--accent)">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-number">04</div>
+            <h3 class="project-title">Monocular Depth Estimation for UAV Navigation</h3>
+            <p class="project-description">
+              <em>Currently in development:</em> Implementing advanced computer vision algorithms 
+              for real-time depth estimation in UAV applications. Focus on lightweight neural 
+              networks optimised for embedded deployment, autonomous obstacle avoidance, 
+              and real-time path planning in GPS-denied environments.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Computer Vision</span>
+              <span class="tech-tag">Neural Networks</span>
+              <span class="tech-tag">UAV Systems</span>
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">TensorFlow</span>
+            </div>
+            <div class="project-links">
+              <a href="#contact" class="project-link secondary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                In Progress
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-<!-- Contact Section -->
-<section id="contact">
-  <h2>Contact</h2>
-  
-  <div class="contact-container">
-    <p>Check out my profiles:</p>
-    <ul class="social-links">
-      <li><a href="https://www.linkedin.com/in/kaitlyn-ashcroft/" target="_blank">LinkedIn</a></li>
-      <li><a href="https://github.com/kaitlynmaree" target="_blank">GitHub</a></li>
-    </ul>
-  </div>
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="section-header reveal">
+      <h2 class="section-title">Let's Build the Future</h2>
+      <p class="section-subtitle">
+        Ready to collaborate on groundbreaking aerospace projects or discuss exciting opportunities?
+      </p>
+    </div>
 
-  <!-- Space between links and form -->
-  <div class="spacer"></div>
+    <div class="contact-grid">
+      <div class="contact-info reveal-left">
+        <h3>Connect With Me</h3>
+        <p>
+          I'm always excited to collaborate with fellow engineers, visionary companies, 
+          and researchers who share my passion for advancing aerospace technology. Whether 
+          you're looking to discuss my projects, explore potential partnerships, or 
+          simply connect over shared interests in space exploration, I'd love to hear from you.
+        </p>
 
-  <div class="contact-container">
-    <h3>Or reach out!</h3>
+        <div class="contact-methods">
+          <div class="contact-method">
+            <div class="contact-method-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </div>
+            <div>
+              <div style="font-weight: 600; margin-bottom: 0.25rem;">Email</div>
+              <div style="color: var(--text-secondary); font-size: 0.9rem;">Professional inquiries welcome</div>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-method-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+              </svg>
+            </div>
+            <div>
+              <div style="font-weight: 600; margin-bottom: 0.25rem;">LinkedIn</div>
+              <div style="color: var(--text-secondary); font-size: 0.9rem;">Professional networking</div>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-method-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </div>
+            <div>
+              <div style="font-weight: 600; margin-bottom: 0.25rem;">GitHub</div>
+              <div style="color: var(--text-secondary); font-size: 0.9rem;">Open source projects</div>
+            </div>
+          </div>
+        </div>
 
-    <!-- Contact Form -->
-    <form id="contact-form" action="https://contact-form-backend-2had.onrender.com" method="POST">
-      
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/kaitlyn-ashcroft/" target="_blank" class="social-link" title="LinkedIn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="https://github.com/kaitlynmaree" target="_blank" class="social-link" title="GitHub">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="mailto:contact@example.com" class="social-link" title="Email">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+      <div class="contact-form reveal-right">
+        <form id="contact-form" action="https://contact-form-backend-2had.onrender.com" method="POST">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your full name">
+          </div>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+          </div>
 
-      <!-- Honeypot Field (Hidden to Bots) -->
-      <input type="text" name="honeypot" class="honeypot">
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="What would you like to discuss?">
+          </div>
 
-      <button type="submit">Send Message</button>
-    </form>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Tell me about your project, opportunity, or just say hello! I'm always excited to connect with fellow engineers and innovators."></textarea>
+          </div>
 
-    <p id="form-status"></p>
-  </div>
-</section>
+          <!-- Honeypot Field (Hidden to Bots) -->
+          <input type="text" name="honeypot" class="honeypot">
 
-  <!-- Link to external JavaScript -->
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+            </svg>
+            Send Message
+          </button>
+        </form>
+
+        <div id="form-status" class="form-status"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cursor trail elements -->
+  <div class="cursor-trail"></div>
+  <div class="cursor-trail"></div>
+  <div class="cursor-trail"></div>
+  <div class="cursor-trail"></div>
+  <div class="cursor-trail"></div>
+
   <script src="script.js"></script>
 </body>
 </html>

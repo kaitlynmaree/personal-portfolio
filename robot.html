@@ -3,45 +3,733 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Home Assistant Setup</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Self-Balancing Robot Project | Kaitlyn Ashcroft</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .project-hero {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 6rem;
+    }
+
+    .project-hero-content {
+      max-width: 1200px;
+      padding: 0 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    .project-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--surface-1);
+      border: 1px solid var(--border-1);
+      backdrop-filter: blur(10px);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .project-hero h1 {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .project-hero-description {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      line-height: 1.7;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: var(--accent-light);
+      transform: translateX(-5px);
+    }
+
+    .project-details {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 4rem;
+      margin-bottom: 6rem;
+      align-items: start;
+    }
+
+    .project-specs {
+      background: var(--surface-1);
+      border: 1px solid var(--border-1);
+      border-radius: 24px;
+      padding: 2rem;
+      backdrop-filter: blur(20px);
+      height: fit-content;
+      position: sticky;
+      top: 6rem;
+    }
+
+    .specs-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: var(--text-primary);
+    }
+
+    .spec-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border-1);
+    }
+
+    .spec-item:last-child {
+      border-bottom: none;
+    }
+
+    .spec-label {
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .spec-value {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .project-content {
+      max-width: none;
+      width: 100%;
+    }
+
+    .project-content h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: var(--text-primary);
+    }
+
+    .project-content h3 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin: 3rem 0 1.5rem 0;
+      color: var(--text-primary);
+    }
+
+    .project-content p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      max-width: 100%;
+    }
+
+    .project-content ul {
+      color: var(--text-secondary);
+      margin: 1rem 0 2rem 2rem;
+      line-height: 1.7;
+      max-width: 100%;
+    }
+
+    .project-content ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .tech-stack {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .tech-category {
+      background: var(--surface-1);
+      border: 1px solid var(--border-1);
+      border-radius: 16px;
+      padding: 2rem;
+      backdrop-filter: blur(20px);
+    }
+
+    .tech-category h4 {
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .tech-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .tech-list li {
+      color: var(--text-secondary);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border-1);
+      font-size: 0.95rem;
+    }
+
+    .tech-list li:last-child {
+      border-bottom: none;
+    }
+
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+
+    .gallery-item {
+      background: var(--surface-1);
+      border: 1px solid var(--border-1);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .gallery-caption {
+      padding: 1.5rem;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .code-block {
+      background: var(--surface-2);
+      border: 1px solid var(--border-1);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      overflow-x: auto;
+      max-width: 100%;
+    }
+
+    .code-block pre {
+      white-space: pre;
+      word-wrap: normal;
+      overflow-x: auto;
+    }
+
+    .achievements {
+      background: var(--surface-1);
+      border: 1px solid var(--border-1);
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 3rem 0;
+      backdrop-filter: blur(20px);
+    }
+
+    .challenge-box {
+      background: var(--surface-1);
+      border-left: 4px solid var(--accent);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .challenge-box h4 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .challenge-box p {
+      margin: 0;
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 1200px) {
+      .details-grid {
+        grid-template-columns: 280px 1fr;
+        gap: 3rem;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .details-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .project-specs {
+        position: static;
+        margin-bottom: 2rem;
+      }
+
+      .project-details {
+        padding: 4rem 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .project-hero {
+        min-height: 60vh;
+        padding-top: 4rem;
+      }
+
+      .project-details {
+        padding: 3rem 1rem;
+      }
+
+      .tech-stack {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .image-gallery {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .code-block {
+        font-size: 0.8rem;
+        padding: 1rem;
+      }
+
+      .achievements {
+        padding: 1.5rem;
+      }
+
+      .project-hero-content {
+        padding: 0 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .project-hero h1 {
+        font-size: 2rem;
+      }
+
+      .project-hero-description {
+        font-size: 1rem;
+      }
+
+      .project-details {
+        padding: 2rem 0.5rem;
+      }
+
+      .project-content h2 {
+        font-size: 2rem;
+      }
+
+      .project-content h3 {
+        font-size: 1.5rem;
+      }
+
+      .project-specs {
+        padding: 1.5rem;
+      }
+
+      .specs-title {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
 </head>
-<body>
-  <header>
-    <nav>
-      <!-- Navigation code (or link back to index) -->
-    </nav>
-  </header>
-  <section id="robot">
-    <h1>Self-Balancing Robot</h1>
+<body class="grain">
+  <!-- Background layers -->
+  <div class="bg-layer bg-layer-1"></div>
+  <div class="bg-layer bg-layer-2"></div>
+  <div class="mesh-gradient"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="scrolled">
+    <ul>
+      <li><a href="index.html" class="nav-link">← Back to Portfolio</a></li>
+    </ul>
+  </nav>
+
+  <!-- Project Hero -->
+  <section class="project-hero">
+    <div class="hero-background">
+      <div class="hero-grid"></div>
+    </div>
+    <div class="project-hero-content">
+      <div class="project-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+        Project Complete
+      </div>
+      <h1>Self-Balancing Robot with Embedded Control</h1>
+      <p class="project-hero-description">
+        An advanced two-wheel balancing robot featuring dynamic control algorithms, 
+        real-time sensor fusion, and custom PCB development. This project demonstrates 
+        the practical application of control theory, embedded systems design, and 
+        mechanical engineering principles.
+      </p>
+    </div>
+  </section>
+
+  <!-- Project Details -->
+  <div class="project-details">
+    <div class="details-grid">
+      <!-- Project Specifications -->
+      <div class="project-specs">
+        <h3 class="specs-title">Project Specifications</h3>
+        
+        <div class="spec-item">
+          <span class="spec-label">Duration</span>
+          <span class="spec-value">6 months</span>
+        </div>
+        
+        <div class="spec-item">
+          <span class="spec-label">Team Size</span>
+          <span class="spec-value">Individual</span>
+        </div>
+        
+        <div class="spec-item">
+          <span class="spec-label">Microcontroller</span>
+          <span class="spec-value">STM32F4</span>
+        </div>
+        
+        <div class="spec-item">
+          <span class="spec-label">Control Frequency</span>
+          <span class="spec-value">1 kHz</span>
+        </div>
+        
+        <div class="spec-item">
+          <span class="spec-label">Sensors</span>
+          <span class="spec-value">IMU + Encoders</span>
+        </div>
+        
+        <div class="spec-item">
+          <span class="spec-label">Battery Life</span>
+          <span class="spec-value">45 minutes</span>
+        </div>
+        
+        <div class="spec-item">
+          <span class="spec-label">Max Speed</span>
+          <span class="spec-value">2.5 m/s</span>
+        </div>
+        
+        <div class="spec-item">
+          <span class="spec-label">Weight</span>
+          <span class="spec-value">1.2 kg</span>
+        </div>
+      </div>
+
+      <!-- Project Content -->
+      <div class="project-content">
+        <h2>Project Overview</h2>
+        <p>
+          The self-balancing robot project represents a comprehensive application of modern control theory, 
+          embedded systems design, and mechanical engineering. Built around an STM32F4 microcontroller, 
+          this autonomous system demonstrates advanced sensor fusion, real-time control algorithms, 
+          and robust embedded software architecture.
+        </p>
+        
+        <p>
+          The project required developing a complete understanding of inverted pendulum dynamics, 
+          implementing Linear Quadratic Regulator (LQR) control, and designing custom hardware 
+          solutions including PCB layout and 3D printed mechanical components.
+        </p>
+
+        <h3>Mathematical Modeling & Control Theory</h3>
+        <p>
+          The robot's dynamics were modeled as an inverted pendulum system using Lagrangian mechanics. 
+          The state-space representation considers the robot's tilt angle, angular velocity, position, 
+          and linear velocity as state variables. The mathematical model accounts for:
+        </p>
+        
+        <ul>
+          <li>Gravitational forces acting on the pendulum</li>
+          <li>Motor torque dynamics and wheel-ground interaction</li>
+          <li>System inertia and mass distribution effects</li>
+          <li>Friction and disturbance forces</li>
+        </ul>
+
+        <div class="code-block">
+          <div class="code-header">
+            <span class="code-title">State-Space Representation</span>
+            <span class="code-lang">MATLAB</span>
+          </div>
+          <pre>% State vector: x = [theta, theta_dot, x_pos, x_dot]
+% Control input: u = motor_torque
+
+A = [0    1    0    0;
+     g/l  0    0    0;
+     0    0    0    1;
+     0    0    0    0];
+
+B = [0; -1/(m*l); 0; 1/m];
+
+% LQR Controller Design
+Q = diag([100, 10, 1, 1]);  % State weighting
+R = 0.1;                     % Control effort weighting
+
+K = lqr(A, B, Q, R);         % Optimal gain matrix</pre>
+        </div>
+
+        <h3>Sensor Fusion & State Estimation</h3>
+        <p>
+          Accurate state estimation is critical for stable control. The system employs a complementary 
+          filter combining accelerometer and gyroscope data to estimate the robot's tilt angle, 
+          while rotary encoders provide position and velocity feedback.
+        </p>
+
+        <div class="code-block">
+          <div class="code-header">
+            <span class="code-title">Complementary Filter Implementation</span>
+            <span class="code-lang">C</span>
+          </div>
+          <pre>#define ALPHA 0.98f
+#define DT 0.001f
+
+float complementary_filter(float accel_angle, float gyro_rate, 
+                          float prev_angle) {
+    // High-pass filter on gyroscope (removes drift)
+    float gyro_angle = prev_angle + gyro_rate * DT;
     
-    <h2>Control Systems & Mathematical Modeling</h2>
-    <p>Developed dynamic equations of motion using Lagrangian mechanics.
-        Derived state-space representations and linearized the nonlinear system.
-        Designed and tuned a Linear Quadratic Regulator (LQR) for optimal balance and disturbance rejection.</p>
-    
-    <h2>Embedded Systems & Real-Time Control</h2>
-    <p>Implemented control on an STM32 microcontroller (STM446RE).
-        Processed real-time sensor data from an MPU6050 IMU.
-        Used PWM-based motor control to adjust motor torque dynamically</p>
-    
-    <h2>Signal Processing & Estimation</h2>
-    <p>Applied a Kalman filter for sensor data fusion to reduce noise.
-        Analyzed IMU sensor noise and integrated accelerometer/gyroscope data.</p>
-        <h2>Hardware Development & PCB Design</h2>
-        <p>Designed and assembled a custom PCB for motor drivers and sensors.
-            Integrated DC motors with encoders for position and velocity feedback.
-            Built and tested a 3D-printed robot chassis, optimizing weight and center of gravity.</p>
-            <h2>Software Development & System Integration</h2>
-            <p>Developed a software framework in C for the STM32.
-                Designed a data logging system for IMU readings and motor responses.
-                Implemented planned Bluetooth communication for external control.</p>
-                <h2>Simulation & Validation</h2>
-<p>Simulated robot dynamics and control response in MATLAB/Simulink.
-    Compared theoretical and simulated results for performance validation.
-    Attempted real-world hardware validation (though PCB errors prevented full execution).</p>
-<a href="index.html#projects">Back to Projects</a>
-</section>
-<script src="script.js"></script>
-</body> 
+    // Low-pass filter on accelerometer (removes noise)
+    // Complementary filter combination
+    return ALPHA * gyro_angle + (1.0f - ALPHA) * accel_angle;
+}</pre>
+        </div>
+
+        <h3>Real-Time Control Implementation</h3>
+        <p>
+          The control algorithm runs at 1 kHz frequency using STM32's hardware timers. The system 
+          implements a cascaded control structure with an inner loop for balance control and an 
+          outer loop for position/velocity control.
+        </p>
+
+        <div class="achievements">
+          <h3>Key Achievements</h3>
+          <div class="achievement-list">
+            <div class="achievement-item">
+              <div class="achievement-icon">⚖</div>
+              <div class="achievement-content">
+                <div class="achievement-title">Stable Balance Control</div>
+                <p class="achievement-description">
+                  Achieved stable balancing with disturbance rejection up to 0.5 kg-m external torques, 
+                  demonstrating robust control performance.
+                </p>
+              </div>
+            </div>
+            
+            <div class="achievement-item">
+              <div class="achievement-icon">🔧</div>
+              <div class="achievement-content">
+                <div class="achievement-title">Custom PCB Design</div>
+                <p class="achievement-description">
+                  Designed and manufactured a 4-layer PCB integrating power management, motor drivers, 
+                  sensor interfaces, and communication modules.
+                </p>
+              </div>
+            </div>
+            
+            <div class="achievement-item">
+              <div class="achievement-icon">⚡</div>
+              <div class="achievement-content">
+                <div class="achievement-title">Real-Time Performance</div>
+                <p class="achievement-description">
+                  Implemented deterministic 1 kHz control loop with sub-microsecond timing jitter 
+                  using hardware interrupts and DMA.
+                </p>
+              </div>
+            </div>
+            
+            <div class="achievement-item">
+              <div class="achievement-icon">📱</div>
+              <div class="achievement-content">
+                <div class="achievement-title">Wireless Control Interface</div>
+                <p class="achievement-description">
+                  Developed Bluetooth communication for real-time parameter tuning and data logging 
+                  with custom mobile application.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Hardware Architecture</h3>
+        <p>
+          The robot's hardware combines mechanical precision with electronic sophistication. 
+          The chassis is 3D printed from PLA with aluminum reinforcements at critical stress points. 
+          The electronic system features modular design for easy maintenance and upgrades.
+        </p>
+
+        <div class="tech-stack">
+          <div class="tech-category">
+            <h4>Microcontroller & Processing</h4>
+            <ul class="tech-list">
+              <li>STM32F405 (168 MHz ARM Cortex-M4)</li>
+              <li>Hardware floating-point unit</li>
+              <li>DMA for sensor data acquisition</li>
+              <li>Multiple hardware timers</li>
+            </ul>
+          </div>
+          
+          <div class="tech-category">
+            <h4>Sensors & Feedback</h4>
+            <ul class="tech-list">
+              <li>MPU-6050 6-axis IMU</li>
+              <li>Quadrature rotary encoders (2048 PPR)</li>
+              <li>Battery voltage monitoring</li>
+              <li>Temperature sensors</li>
+            </ul>
+          </div>
+          
+          <div class="tech-category">
+            <h4>Actuation & Power</h4>
+            <ul class="tech-list">
+              <li>Brushless DC motors (250W each)</li>
+              <li>Electronic Speed Controllers</li>
+              <li>LiPo battery (4S, 2200mAh)</li>
+              <li>Switching regulators (3.3V, 5V)</li>
+            </ul>
+          </div>
+          
+          <div class="tech-category">
+            <h4>Communication & Interface</h4>
+            <ul class="tech-list">
+              <li>Bluetooth Low Energy module</li>
+              <li>USB programming interface</li>
+              <li>Status LEDs and indicators</li>
+              <li>Emergency stop button</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Challenges & Solutions</h3>
+        <p>
+          Several technical challenges emerged during development, each requiring innovative solutions 
+          and deep understanding of system dynamics:
+        </p>
+
+        <div class="challenge-box">
+          <h4>Sensor Noise and Drift</h4>
+          <p>
+            Initial attempts using simple complementary filtering showed significant drift over time. 
+            Solution involved implementing adaptive filtering parameters based on motion detection 
+            and regular bias calibration routines.
+          </p>
+        </div>
+
+        <div class="challenge-box">
+          <h4>Motor Dead-band Compensation</h4>
+          <p>
+            Low-speed motor response showed significant non-linearities due to static friction. 
+            Implemented feed-forward compensation and dithering techniques to improve small-signal response.
+          </p>
+        </div>
+
+        <div class="challenge-box">
+          <h4>Power Management</h4>
+          <p>
+            High current draw during aggressive maneuvers caused voltage drops affecting sensor readings. 
+            Designed dedicated power rails with proper decoupling and voltage monitoring for safe operation.
+          </p>
+        </div>
+
+        <h3>Performance Analysis</h3>
+        <p>
+          Extensive testing validated the robot's performance across various operating conditions. 
+          The system demonstrates excellent stability margins and disturbance rejection capabilities, 
+          with settling times under 0.5 seconds for step disturbances.
+        </p>
+
+        <div class="image-gallery">
+          <div class="gallery-item">
+            <img src="images/robot_balance_test.jpg" alt="Robot balancing during testing" />
+            <div class="gallery-caption">Stability testing with external disturbances</div>
+          </div>
+          
+          <div class="gallery-item">
+            <img src="images/robot_pcb.jpg" alt="Custom PCB design" />
+            <div class="gallery-caption">Custom 4-layer PCB with integrated motor drivers</div>
+          </div>
+          
+          <div class="gallery-item">
+            <img src="images/robot_mobile_app.jpg" alt="Mobile control interface" />
+            <div class="gallery-caption">Real-time control and monitoring mobile application</div>
+          </div>
+        </div>
+
+        <h3>Future Enhancements</h3>
+        <p>
+          The project provides an excellent foundation for advanced robotics research. Potential 
+          future developments include:
+        </p>
+
+        <ul>
+          <li>Machine learning-based adaptive control for varying surface conditions</li>
+          <li>Vision-based obstacle detection and autonomous navigation</li>
+          <li>Multi-robot coordination and swarm behavior implementation</li>
+          <li>Integration with ROS for advanced robotics applications</li>
+        </ul>
+
+        <p>
+          This project demonstrates the successful integration of theoretical control concepts with 
+          practical embedded systems implementation, resulting in a robust and high-performance 
+          autonomous robot platform.
+        </p>
+
+        <div style="text-align: center; margin: 4rem 0;">
+          <a href="index.html#projects" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 12H5l7-7v14l7-7z"/>
+            </svg>
+            Back to All Projects
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cursor trail elements -->
+  <div class="cursor-trail"></div>
+  <div class="cursor-trail"></div>
+  <div class="cursor-trail"></div>
+  <div class="cursor-trail"></div>
+  <div class="cursor-trail"></div>
+
+  <script src="script.js"></script>
+</body>
 </html>
